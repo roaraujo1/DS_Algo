@@ -9,14 +9,19 @@ class Heap:
         self.root = None
 
     #insertNode function that checks where to add the node
-    def insertNode(self,newNode:int)->None:
+    def insertNodeToTheTree(self,newNode:int)->None:
         #case 1: there is no root node
         if not self.root:
             self.root = TreeNode(newNode)
         #case 2: root exists and now recursion needs to take place to see where to add node
-        curr = self.root
-        while curr:
-            pass
+        
+        def dfs(node):
+            
+            if not node.right and not node.left:
+                node.left = TreeNode(newNode)
+            dfs(node.left)
+
+                
         
 
 heap = Heap()
