@@ -1,5 +1,5 @@
 class TreeNode:
-    def __init__(self,val):
+    def __init__(self,val=None):
         self.val = val
         self.left = None
         self.right = None
@@ -65,6 +65,7 @@ class Tree:
 
         return dfs(root)
     
+    
 
         
 
@@ -81,7 +82,7 @@ tree.root = tree.insertNode(tree.root,0)
 print(tree.preOrder(tree.root))
 print(tree.inOrder(tree.root))
 print(tree.postOrder(tree.root))
-print(tree.searchForNode(tree.root,0))
+print(tree.searchForNode(tree.root,-1))
 
 
 
