@@ -53,6 +53,19 @@ class Tree:
             res.append(node.val)
         dfs(root)
         return res
+    
+
+    def searchForNode(self,root:TreeNode,elemToFind:int)->bool:
+        def dfs(node):
+            if not node:
+                return False
+            if node.val == elemToFind:
+                return True
+            return dfs(node.left) or dfs(node.right)
+
+        return dfs(root)
+    
+
         
 
 
@@ -68,6 +81,7 @@ tree.root = tree.insertNode(tree.root,0)
 print(tree.preOrder(tree.root))
 print(tree.inOrder(tree.root))
 print(tree.postOrder(tree.root))
+print(tree.searchForNode(tree.root,0))
 
 
 
